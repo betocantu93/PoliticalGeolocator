@@ -1,0 +1,16 @@
+# Supabase CLI local
+.branches
+.temp
+supabase/.temp
+
+# Datos crudos (shapefiles INEGI/INE) — no versionar, son pesados
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.zip
+data/
+
+# OS
+.DS_Store
