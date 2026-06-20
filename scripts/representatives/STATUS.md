@@ -23,18 +23,18 @@ Leyenda: ✅ hecho · 🔄 en proceso · ⬜ pendiente
 | 11 | Guanajuato | 🔄 generado | 🔄 generado (rev. Dolores Hidalgo) |
 | 12 | Guerrero | 🔄 generado | 🔄 generado (faltan ~2: Ñuu Savi; rev. verificación) |
 | 13 | Hidalgo | 🔄 generado | 🔄 generado |
-| 14 | Jalisco | ⬜ | ⬜ |
-| 15 | Estado de México | ⬜ | ⬜ |
-| 16 | Michoacán | ⬜ | ⬜ |
-| 17 | Morelos | ⬜ | ⬜ |
-| 18 | Nayarit | ⬜ | ⬜ |
-| 19 | Nuevo León | ⬜ | ⬜ |
-| 20 | Oaxaca | ⬜ | ⬜ (570 mpios; usos y costumbres) |
-| 21 | Puebla | ⬜ | ⬜ |
-| 22 | Querétaro | ⬜ | ⬜ |
-| 23 | Quintana Roo | ⬜ | ⬜ |
-| 24 | San Luis Potosí | ⬜ | ⬜ |
-| 25 | Sinaloa | ⬜ | ⬜ |
+| 14 | Jalisco | 🔄 generado | 🔄 generado (125) |
+| 15 | Estado de México | 🔄 generado | 🔄 generado (125) |
+| 16 | Michoacán | 🔄 generado | 🔄 generado (Cherán usos y costumbres) |
+| 17 | Morelos | 🔄 generado | 🔄 generado (3 usos y costumbres) |
+| 18 | Nayarit | 🔄 generado | 🔄 generado |
+| 19 | Nuevo León | 🔄 generado | 🔄 generado |
+| 20 | Oaxaca | 🔄 generado | ⬜ PENDIENTE (570 mpios; ~417 usos y costumbres) |
+| 21 | Puebla | 🔄 generado | 🔄 parcial ~191/217 (falta cola Y-Z) |
+| 22 | Querétaro | 🔄 generado | 🔄 generado |
+| 23 | Quintana Roo | 🔄 generado | 🔄 generado |
+| 24 | San Luis Potosí | 🔄 generado | 🔄 generado |
+| 25 | Sinaloa | 🔄 generado | 🔄 generado |
 | 26 | Sonora | ✅ | ✅ |
 | 27 | Tabasco | ⬜ | ⬜ |
 | 28 | Tamaulipas | ⬜ | ⬜ |

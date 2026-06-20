@@ -1,0 +1,153 @@
+-- 15_mexico_presidentes.sql — 125 presidentes municipales (2024-2027).
+-- Fuente: Wikipedia "Anexo:Presidentes municipales del Estado de México (2024-2027)". Verificar.
+-- Lerma: alcalde sin partido -> Independiente. Acambay con nombre INEGI largo.
+
+begin;
+
+create temp table tmp_pm (nom text, name text, party text);
+
+insert into tmp_pm (nom, name, party) values
+  ('Acambay de Ruíz Castañeda','Angélica Colín Pacheco','MORENA'),
+  ('Acolman','Blanca Guadalupe Sánchez Osorio','MORENA'),
+  ('Aculco','Valeria Cruz Olvera','PVEM'),
+  ('Almoloya de Alquisiras','Brenda Angélica Rivera Abarca','MORENA'),
+  ('Almoloya de Juárez','Adolfo Jonathan Solís Gómez','PVEM'),
+  ('Almoloya del Río','Óscar Galán Flores','Nueva Alianza'),
+  ('Amanalco','Iris Loreto Gómez','MORENA'),
+  ('Amatepec','Epimaco Casique Vences','MORENA'),
+  ('Amecameca','Ivette Topete García','PRI'),
+  ('Apaxco','Alejandro Ruíz Martínez','PT'),
+  ('Atenco','César del Valle Ramírez','MORENA'),
+  ('Atizapán','Emilio Salas Perea','MORENA'),
+  ('Atizapán de Zaragoza','Pedro David Rodríguez Villegas','PAN'),
+  ('Atlacomulco','Nicolás Martínez Romero','MORENA'),
+  ('Atlautla','Lucas Torres Rosales','PVEM'),
+  ('Axapusco','Melitón Cid García','PT'),
+  ('Ayapango','Margarito Soriano Cuadros','PRD'),
+  ('Calimaya','Omar Guillermo Sánchez Velázquez','PT'),
+  ('Capulhuac','Selenne Hernández Herrera','MORENA'),
+  ('Coacalco de Berriozábal','David Sánchez Isidoro','PRI'),
+  ('Coatepec Harinas','Marco Antonio Díaz Juárez','PRI'),
+  ('Cocotitlán','Miguel Artemio Florín Florín','PRI'),
+  ('Coyotepec','Marisol Luna Cruz','MORENA'),
+  ('Cuautitlán','Juana Carrillo Luna','MORENA'),
+  ('Cuautitlán Izcalli','Luis Daniel Serrano Palacios','MORENA'),
+  ('Chalco','Abigail Sánchez Martínez','MORENA'),
+  ('Chapa de Mota','María Guadalupe Franco Ruíz','MORENA'),
+  ('Chapultepec','Jazmín Delgado López','PVEM'),
+  ('Chiautla','Gonzalo Bojorquez Conde','MC'),
+  ('Chicoloapan','Francisco Javier Mendoza Vázquez','MORENA'),
+  ('Chiconcuac','Rafael Vázquez de la Rosa','PT'),
+  ('Chimalhuacán','Xóchitl Flores Jiménez','MORENA'),
+  ('Donato Guerra','María del Cármen Albarrán Gabriel','MORENA'),
+  ('Ecatepec de Morelos','Azucena Cisneros Coss','MORENA'),
+  ('Ecatzingo','Adoldo Soriano Carmona','PVEM'),
+  ('Huehuetoca','Juan Manuel López Adán','PVEM'),
+  ('Hueypoxtla','Rosa Elva Barrera Flores','PVEM'),
+  ('Huixquilucan','Romina Contreras Carrasco','PAN'),
+  ('Isidro Fabela','Carolina Flores Campos','PVEM'),
+  ('Ixtapaluca','Felipe Rafael Arvizu de la Luz','MORENA'),
+  ('Ixtapan de la Sal','Jessica Rosalio Embriz','MORENA'),
+  ('Ixtapan del Oro','Benigno Arroyo Bautista','PT'),
+  ('Ixtlahuaca','María Gudalupe Díaz Avilés','MORENA'),
+  ('Xalatlaco','Abel Flores Guzmán','MORENA'),
+  ('Jaltenco','María del Rosario Payne Islas','MORENA'),
+  ('Jilotepec','Rodolfo Nogués Barajas','PRI'),
+  ('Jilotzingo','Raziel Eugenio Chavarría Chavarría','PVEM'),
+  ('Jiquipilco','Antonio Escobar Félix','PT'),
+  ('Jocotitlán','Leilani Aylin López González','MORENA'),
+  ('Joquicingo','Danae Espinoza Zimerman','PVEM'),
+  ('Juchitepec','José Juan Calvo Fernández','MORENA'),
+  ('Lerma','Miguel Ángel Ramírez Ponce','Independiente'),
+  ('Malinalco','Marlen Nieto Vázquez','MC'),
+  ('Melchor Ocampo','Victoria Aurelia Viquez Vega','MORENA'),
+  ('Metepec','Fernando Gustavo Flores Fernández','PAN'),
+  ('Mexicaltzingo','Ariadne Saray Benítez Espinosa','MORENA'),
+  ('Morelos','Edgar Plaza Barrera','MORENA'),
+  ('Naucalpan de Juárez','Isaac Martín Montoya Márquez','MORENA'),
+  ('Nextlalpan','Lorena Alameda Juárez','MORENA'),
+  ('Nezahualcóyotl','Adolfo Cerqueda Rebollo','MORENA'),
+  ('Nicolás Romero','Yoselin Nanyeli Mendoza Ramírez','MORENA'),
+  ('Nopaltepec','Mario Elizalde Vázquez','MC'),
+  ('Ocoyoacac','Nancy Valdéz Ruíz','PVEM'),
+  ('Ocuilan','Juan Gordillo Abundis','MC'),
+  ('El Oro','Juana Elizabeth Díaz Peñaloza','MORENA'),
+  ('Otumba','Hilarión Coronel Lemus','PRI'),
+  ('Otzoloapan','Esmeralda Cabrera Rodríguez','PRI'),
+  ('Otzolotepec','Sinaí Guadalupe Lugo Vargas','PRI'),
+  ('Ozumba','Ricardo Valencia Valencia','PVEM'),
+  ('Papalotla','Rodrigo Ledesma Islas','MORENA'),
+  ('La Paz','Martha Guerrero Sánchez','MORENA'),
+  ('Polotitlán','Teresita Sánchez Bárcena','PRI'),
+  ('Rayón','Edna Stephany Talavera Mercado','PRI'),
+  ('San Antonio la Isla','Alejandra Castro Nava','PRI'),
+  ('San Felipe del Progreso','Jaime Torres Marín','MORENA'),
+  ('San Martín de las Pirámides','José Vicente Meneses Benítez','MORENA'),
+  ('San Mateo Atenco','Ana Aurora Muñiz Neyra','PRI'),
+  ('San Simón de Guerrero','Yessika Santana Domínguez','PT'),
+  ('Santo Tomás','Ismael Félix Matías Domínguez','PRD'),
+  ('Soyaniquilpan de Juárez','Fernando Ulises Montiel Arteaga','MORENA'),
+  ('Sultepec','José Alberto Mejía Santa Olalla','PVEM'),
+  ('Tecámac','Rosa Yolanda Wong Romero','MORENA'),
+  ('Tejupilco','Rigoberto López Rivera','PRI'),
+  ('Temamatla','José Guadalupe Gómez Hernández','PVEM'),
+  ('Temascalapa','Alan Martínez Cervantes','MORENA'),
+  ('Temascalcingo','Verónica Moreno Martínez','MORENA'),
+  ('Temascaltepec','Ahimelec Villa Peña','MORENA'),
+  ('Temoaya','Berenice Carrillo Macario','MORENA'),
+  ('Tenancingo','Nancy Nápoles Pacheco','MORENA'),
+  ('Tenango del Aire','Johanna Fernández Sánchez','PVEM'),
+  ('Tenango del Valle','Roberto Bautista Arellano','MORENA'),
+  ('Teoloyucan','Luis Domingo Zenteno Santaella','MORENA'),
+  ('Teotihuacán','Mario Paredes de la Torre','PRI'),
+  ('Tepetlaoxtoc','Diana Lizbeth Morales Méndez','MORENA'),
+  ('Tepetlixpa','Abelardo Rodríguez García','MC'),
+  ('Tepotzotlán','María de los Ángeles Zuppa Villegas','MC'),
+  ('Tequixquiac','Sintique Mayte Moreno Rodríguez','MORENA'),
+  ('Texcaltitlán','Jesús Mercado Escobar','MORENA'),
+  ('Texcalyacac','Brenda Camacho Tornero','Nueva Alianza'),
+  ('Texcoco','Nazario Gutiérrez Martínez','MORENA'),
+  ('Tezoyuca','Edgar Uriel Morales Ávila','PRI'),
+  ('Tianguistenco','Erika Patricia Olea de la Torre','PVEM'),
+  ('Timilpan','Isaías Lugo García','PRI'),
+  ('Tlalmanalco','Luis Enrique Sánchez Reyes','MORENA'),
+  ('Tlalnepantla de Baz','Raciel Pérez Cruz','MORENA'),
+  ('Tlatlaya','Crisóforo Hernández Mena','MORENA'),
+  ('Toluca','Ricardo Moreno Bastida','MORENA'),
+  ('Tonatico','César Hernando Fuentes Domínguez','MC'),
+  ('Tultepec','Ramón Sergio Luna Cortés','MORENA'),
+  ('Tultitlán','Ana María Castro Fernández','MORENA'),
+  ('Valle de Bravo','Michelle Núñez Ponce','MORENA'),
+  ('Villa de Allende','Cirilo Flores Velázquez','PT'),
+  ('Villa del Carbón','Ofelia Antonio Sandoval','PT'),
+  ('Villa Guerrero','Carlos Rogel Guadarrama','PVEM'),
+  ('Villa Victoria','Mario Santana Carbajal','PRI'),
+  ('Xonacatlán','Joaquín Ruiz Esquivel','MC'),
+  ('Zacazonapan','Roberto Villafaña Nava','MORENA'),
+  ('Zacualpan','Carlos Rogel Valle','MORENA'),
+  ('Zinacantepec','Manuel Vilchis Viveros','PVEM'),
+  ('Zumpahuacán','Myriam Esperanza Álvarez Arellano','PT'),
+  ('Zumpango','Roselia Veridiana García Alquisira','MORENA'),
+  ('Valle de Chalco Solidaridad','Alan Velazco Agüero','MORENA'),
+  ('Luvianos','Edder Jesús Jaimes Garduño','MORENA'),
+  ('San José del Rincón','Jaime Mercado Chávez','PVEM'),
+  ('Tonanitla','Mauro Martínez Martínez','MORENA');
+
+insert into public.representatives (role, cve_ent, cvegeo_mun, name, party)
+select 'municipal_president', '15', m.cvegeo, t.name, t.party
+from tmp_pm t
+join public.municipalities m
+  on replace(upper(translate(trim(m.nom_mun), 'áéíóúüÁÉÍÓÚÜñÑ', 'aeiouuAEIOUUnN')),' ','')
+   = replace(upper(translate(trim(t.nom),     'áéíóúüÁÉÍÓÚÜñÑ', 'aeiouuAEIOUUnN')),' ','')
+ and m.cve_ent = '15'
+on conflict (role, cve_ent, coalesce(cvegeo_mun,''), coalesce(distrito,-1))
+do update set name = excluded.name, party = excluded.party;
+
+commit;
+
+select m.cvegeo, m.nom_mun
+from public.municipalities m
+where m.cve_ent = '15'
+  and not exists (select 1 from public.representatives r
+                  where r.role='municipal_president' and r.cvegeo_mun = m.cvegeo)
+order by m.nom_mun;

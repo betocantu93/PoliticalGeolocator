@@ -1,0 +1,153 @@
+-- 14_jalisco_presidentes.sql — presidentes municipales (2024-2027).
+-- Fuente: Wikipedia "Anexo:Presidentes municipales de Jalisco (2024-2027)". Verificar.
+-- Teuchitlán: titular vigente (desde 2025). Partidos locales: Hagamos, Futuro.
+
+begin;
+
+create temp table tmp_pm (nom text, name text, party text);
+
+insert into tmp_pm (nom, name, party) values
+  ('Acatic','Sandra Castañeda Alatorre','MC'),
+  ('Acatlán de Juárez','Jaime Enrique Velasco López','MC'),
+  ('Ahualulco de Mercado','José Bladimir Arreola Álvarez','MC'),
+  ('Amacueca','Neri Quintero Barragán','MC'),
+  ('Amatitán','Lionel Partida Ortiz','MC'),
+  ('Ameca','Martha Catalina Loza Castro','MORENA'),
+  ('San Juanito de Escobedo','José Adrián Rodríguez García','MORENA'),
+  ('Arandas','José Socorro Martínez Velázquez','Hagamos'),
+  ('El Arenal','Gildardo Partida Hermosillo','MC'),
+  ('Atemajac de Brizuela','Víctor Manuel Vázquez Beas','MORENA'),
+  ('Atengo','Carlos Pelayo González','Hagamos'),
+  ('Atenguillo','Rosalío Villaseñor Álvarez','MC'),
+  ('Atotonilco el Alto','Martha Liliana Padilla Ramírez','PRI'),
+  ('Atoyac','Juan Francisco Osorio de la Cruz','PRI'),
+  ('Autlán de Navarro','Gustavo Salvador Robles Martínez','PRI'),
+  ('Ayotlán','Guillermo Rodríguez Escoto','PVEM'),
+  ('Ayutla','Oswaldo Antonio de la Cruz García','PAN'),
+  ('La Barca','Ricardo Hernández Becerra','PRI'),
+  ('Bolaños','Trino Sandoval González','Hagamos'),
+  ('Cabo Corrientes','Joaquín Romero Bravo','PVEM'),
+  ('Casimiro Castillo','Gilberto Pérez Enríquez','PRI'),
+  ('Cihuatlán','Apolonio de Jesús Pelayo Flores','Hagamos'),
+  ('Zapotlán el Grande','Magali Casillas Contreras','MORENA'),
+  ('San Gabriel','Alma Gabriela Rodríguez Benavides','PRI'),
+  ('Cocula','Luis Armando Aldana González','MC'),
+  ('Colotlán','José Julián Quezada Santoyo','MC'),
+  ('Concepción de Buenos Aires','Gerardo López Cuéllar','PVEM'),
+  ('Cuautitlán de García Barragán','María del Rosario Delgado Camberos','MC'),
+  ('Cuautla','Luz del Carmen López Valle','PVEM'),
+  ('Cuquío','Ubaldo Chávez Delgadillo','PRI'),
+  ('Chapala','Alejandro de Jesús Aguirre Curiel','PAN'),
+  ('Chimaltitán','Silvino Yáñez López','MC'),
+  ('Chiquilistlán','Álvaro González Alvarado','MC'),
+  ('Degollado','Fernando Villaseñor Castro','PRD'),
+  ('Ejutla','Rosa Angélica Rivera González','MC'),
+  ('Encarnación de Díaz','Erika Adriana Cuevas Fuentes','MC'),
+  ('Etzatlán','Carlos Martínez Reyes','PAN'),
+  ('Gómez Farías','Rosa María Delgadillo Martínez','Hagamos'),
+  ('El Grullo','Milton Carlos Cárdenas Osorio','MC'),
+  ('Guachinango','Viridiana Rodríguez Topete','Hagamos'),
+  ('Guadalajara','Verónica Delgadillo García','MC'),
+  ('Hostotipaquillo','Teresa de Jesús González Carmona','MC'),
+  ('Huejúcar','Hilda Díaz de Santiago','PRD'),
+  ('Huejuquilla el Alto','Miguel Pérez Graciano','MORENA'),
+  ('La Huerta','Luis Arias Madrigal','PRD'),
+  ('Ixtlahuacán de los Membrillos','José Heriberto García Murillo','PRI'),
+  ('Ixtlahuacán del Río','Leoncio Guzmán González','MORENA'),
+  ('Jalostotitlán','Judith Macías Ramírez','MC'),
+  ('Jamay','César Celestino Molina Sahagún','PRD'),
+  ('Jesús María','Olivia Sevilla López','PAN'),
+  ('Jilotlán de los Dolores','Hisel González Mendoza','PAN'),
+  ('Jocotepec','Hugo David García Vargas','Futuro'),
+  ('Juanacatlán','Ana Rosa Vergara Ángel','PT'),
+  ('Juchitlán','Silvia Deniz Cobian Osorio','PRI'),
+  ('Lagos de Moreno','Edgar Alfredo González Chávez','MC'),
+  ('El Limón','Nelson González Figueroa','MORENA'),
+  ('Magdalena','Marco Trejo Tellez Girón','PRI'),
+  ('Santa María del Oro','Aricela López López','PRI'),
+  ('La Manzanilla de la Paz','Héctor Gonzalo Díaz Díaz','PVEM'),
+  ('Mascota','Marco Antonio Rubio López','MORENA'),
+  ('Mazamitla','Amanda Albarrán Ramos','PRI'),
+  ('Mexticacán','Jazmín Celenne González López','MORENA'),
+  ('Mezquitic','Tomás Torres Álvarez','PAN'),
+  ('Mixtlán','José Miguel Morelos Sánchez','PRI'),
+  ('Ocotlán','Deysi Nallely Ángel Hernández','MC'),
+  ('Ojuelos de Jalisco','Juan Carlos Jasso Romo','MC'),
+  ('Pihuamo','Antonio Jorge Alejandro Soto Flores','MC'),
+  ('Poncitlán','Arturo Israel Ascencio Gómez','MC'),
+  ('Puerto Vallarta','Luis Ernesto Munguía González','PVEM'),
+  ('Villa Purificación','Gabriel Domínguez Preciado','PRI'),
+  ('Quitupan','José de Jesús Morales Barragán','MC'),
+  ('El Salto','María Elena Farías Villafan','MORENA'),
+  ('San Cristóbal de la Barranca','Karina Guzmán Cardona','PAN'),
+  ('San Diego de Alejandría','José de Jesús Sánchez González','PVEM'),
+  ('San Juan de los Lagos','Alejandro de Anda Lozano','PAN'),
+  ('San Martín de Bolaños','Concepción Magdaleno Zayas','Hagamos'),
+  ('San Julián','Cristian Martín Hernández García','MORENA'),
+  ('San Marcos','Laura Sarai Alcántar Hernández','PVEM'),
+  ('San Martín Hidalgo','Juana Ceballos Guzmán','PVEM'),
+  ('San Miguel el Alto','María Elva Loza Gama','PAN'),
+  ('San Sebastián del Oeste','María Aurora Ponce Peña','MC'),
+  ('Santa María de los Ángeles','Minerva Robles Ortega','PRI'),
+  ('Sayula','Jazmín Carrión Calvario','MC'),
+  ('Tala','Juan Gerardo Ruíz Delgado','MC'),
+  ('Talpa de Allende','Patricia Sánchez Moro','MORENA'),
+  ('Tamazula de Gordiano','Laura Gabriela Jiménez Íñiguez','MC'),
+  ('Tapalpa','Antonio Morales Díaz','MORENA'),
+  ('Tecalitlán','Brenda Patricia Barriga López','MC'),
+  ('Tecolotlán','José Preciado Soltero','Hagamos'),
+  ('Techaluta de Montenegro','Alfredo Sánchez Pulido','PT'),
+  ('Tenamaxtlán','José Manuel Cárdenas Castillo','PRI'),
+  ('Teocaltiche','Silvia Margarita Villalobos Delgado','PRI'),
+  ('Teocuitatlán de Corona','Ricardo Sahagún Quiñonez','PVEM'),
+  ('Tepatitlán de Morelos','Miguel Ángel Esquivias Esquivias','PAN'),
+  ('Tequila','Diego Rivera Navarro','MORENA'),
+  ('Teuchitlán','Jaime Rodríguez Ballesteros','MC'),
+  ('Tizapán el Alto','José Santiago Corona Valencia','PRI'),
+  ('Tlajomulco de Zúñiga','Gerardo Quirino Velázquez Chávez','MC'),
+  ('San Pedro Tlaquepaque','Laura Pérez Segura','MORENA'),
+  ('Tolimán','Alma Mirella Siordia Romero','MC'),
+  ('Tomatlán','Daniel Ruíz Benavidez','MC'),
+  ('Tonalá','Sergio Armando Chávez Dávalos','MORENA'),
+  ('Tonaya','Rafael Cisneros Díaz','PRI'),
+  ('Tonila','Gladis Minerva Silva González','MC'),
+  ('Totatiche','Gema Livier Lara Gómez','PAN'),
+  ('Tototlán','Abel Vázquez Villalpando','MORENA'),
+  ('Tuxcacuesco','Ramón Reynaga Araiza','PAN'),
+  ('Tuxcueca','Juan Diego Fonseca Zepeda','MC'),
+  ('Tuxpan','Claudia Gil Montes','MORENA'),
+  ('Unión de San Antonio','Ana Gabriela Hurtado Luna','PAN'),
+  ('Unión de Tula','María Esther Torres Magaña','MORENA'),
+  ('Valle de Guadalupe','Álvaro Ibarra Padilla','PAN'),
+  ('Valle de Juárez','José Luis Rodríguez Barragán','PAN'),
+  ('Villa Corona','Juan Pablo Barajas Gutiérrez','PVEM'),
+  ('Villa Guerrero','Esmeralda Huerta Hernández','PRI'),
+  ('Villa Hidalgo','Jaime Cruz Villalpando','MC'),
+  ('Cañadas de Obregón','José Rodrigo Álvarez Padilla','MC'),
+  ('Yahualica de González Gallo','Wendy Nadezhda Limón Ruvalcaba','PT'),
+  ('Zacoalco de Torres','Nancy Toscano Hoyos','MC'),
+  ('Zapopan','Juan José Frangie Saade','MC'),
+  ('Zapotiltic','Jorge Irineo Silva Sánchez','Hagamos'),
+  ('Zapotitlán de Vadillo','Maricela Reyes Benicio','PT'),
+  ('Zapotlán del Rey','Juan Manuel Godinez Padilla','MC'),
+  ('Zapotlanejo','Silvia Patricia Sánchez González','MC'),
+  ('San Ignacio Cerro Gordo','Teresa Romo González','PRI');
+
+insert into public.representatives (role, cve_ent, cvegeo_mun, name, party)
+select 'municipal_president', '14', m.cvegeo, t.name, t.party
+from tmp_pm t
+join public.municipalities m
+  on replace(upper(translate(trim(m.nom_mun), 'áéíóúüÁÉÍÓÚÜñÑ', 'aeiouuAEIOUUnN')),' ','')
+   = replace(upper(translate(trim(t.nom),     'áéíóúüÁÉÍÓÚÜñÑ', 'aeiouuAEIOUUnN')),' ','')
+ and m.cve_ent = '14'
+on conflict (role, cve_ent, coalesce(cvegeo_mun,''), coalesce(distrito,-1))
+do update set name = excluded.name, party = excluded.party;
+
+commit;
+
+select m.cvegeo, m.nom_mun
+from public.municipalities m
+where m.cve_ent = '14'
+  and not exists (select 1 from public.representatives r
+                  where r.role='municipal_president' and r.cvegeo_mun = m.cvegeo)
+order by m.nom_mun;
