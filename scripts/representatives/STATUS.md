@@ -36,8 +36,8 @@ Leyenda: ✅ hecho · 🔄 en proceso · ⬜ pendiente
 | 24 | San Luis Potosí | 🔄 generado | 🔄 generado |
 | 25 | Sinaloa | 🔄 generado | 🔄 generado |
 | 26 | Sonora | ✅ | ✅ |
-| 27 | Tabasco | ⬜ | ⬜ |
-| 28 | Tamaulipas | ⬜ | ⬜ |
+| 27 | Tabasco | 🔄 generado | 🔄 generado |
+| 28 | Tamaulipas | 🔄 generado | 🔄 generado |
 | 29 | Tlaxcala | ⬜ | ⬜ |
 | 30 | Veracruz | ⬜ | ⬜ |
 | 31 | Yucatán | ⬜ | ⬜ |
