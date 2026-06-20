@@ -1,6 +1,6 @@
--- diputados_federales.sql — 300 diputados federales de mayoría relativa (LXVI Legislatura).
--- Fuente: Cámara de Diputados (export oficial xlsx). Nombre en formato oficial 'Apellidos Nombres'.
--- Solo MR (con distrito); los 200 plurinominales se omiten (no resuelven por coordenada).
+-- diputados_federales.sql — diputados federales de mayoría relativa.
+-- Generado por build_diputados_federales.py desde el xlsx oficial de la Cámara.
+-- Solo MR (con distrito); plurinominales omitidos.
 
 insert into public.representatives (role, cve_ent, distrito, name, party) values
   ('federal_deputy','01',1,'Ambriz Delgadillo Humberto','PRI'),
