@@ -36,6 +36,34 @@ Cargados ~192/217. Faltan estos (correr verificación para confirmar):
 | 21216 | Zoquiapan |
 | 21217 | Zoquitlán |
 
+## 30 — Veracruz: 21 presidentes faltantes (191/212 cargados)
+WebFetch no alcanza el final de la página (212 filas). Faltan exactamente estos 21,
+fuente sugerida: IEE Veracruz / PREP 2025:
+
+| cvegeo | municipio |
+|--------|-----------|
+| 30137 | Las Vigas de Ramírez |
+| 30147 | Sochiapa |
+| 30193 | Villa Aldama |
+| 30195 | Xoxocotla |
+| 30196 | Yanga |
+| 30197 | Yecuatla |
+| 30198 | Zacualpan |
+| 30199 | Zaragoza |
+| 30200 | Zentla |
+| 30201 | Zongolica |
+| 30202 | Zontecomatlán |
+| 30203 | Zozocolco de Hidalgo |
+| 30204 | Tres Valles |
+| 30205 | Nanchital de Lázaro Cárdenas del Río |
+| 30206 | Agua Dulce |
+| 30207 | El Higo |
+| 30208 | Carlos A. Carrillo |
+| 30209 | Uxpanapa |
+| 30210 | Tatahuicapan de Juárez |
+| 30211 | San Rafael |
+| 30212 | Santiago Sochiapan |
+
 ## 12 — Guerrero: ~2 presidentes faltantes
 - La fuente dio 83/85; faltan municipios nuevos (p.ej. Ñuu Savi). Confirmar con verificación.
 

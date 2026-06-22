@@ -38,10 +38,10 @@ Leyenda: ✅ hecho · 🔄 en proceso · ⬜ pendiente
 | 26 | Sonora | ✅ | ✅ |
 | 27 | Tabasco | 🔄 generado | 🔄 generado |
 | 28 | Tamaulipas | 🔄 generado | 🔄 generado |
-| 29 | Tlaxcala | ⬜ | ⬜ |
-| 30 | Veracruz | ⬜ | ⬜ |
-| 31 | Yucatán | ⬜ | ⬜ |
-| 32 | Zacatecas | ⬜ | ⬜ |
+| 29 | Tlaxcala | 🔄 generado | 🔄 generado |
+| 30 | Veracruz | 🔄 generado | 🔄 parcial 191/212 (21 en PENDIENTES) |
+| 31 | Yucatán | 🔄 generado (21 distritos) | 🔄 generado (106) |
+| 32 | Zacatecas | 🔄 generado | 🔄 generado |
 
 ## Convenciones por archivo
 - `scripts/representatives/<cve>_<estado>_locales.sql`
