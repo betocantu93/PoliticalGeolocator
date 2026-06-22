@@ -47,6 +47,17 @@ Leyenda: ✅ hecho · 🔄 en proceso · ⬜ pendiente
 - `scripts/representatives/<cve>_<estado>_locales.sql`
 - `scripts/representatives/<cve>_<estado>_presidentes.sql` (usa JOIN por nombre, ver Sonora)
 
+## Orden de ejecución reproducible (desde cero)
+1. `gobernadores.sql`
+2. `diputados_federales.sql` (o regenerar con `build_diputados_federales.py`)
+3. Todos los `<cve>_<estado>_locales.sql`
+4. Todos los `<cve>_<estado>_presidentes.sql`
+5. **`_fixes_cvegeo.sql`** ← correcciones manuales por cvegeo (municipios que no machean
+   por nombre: abreviaturas DR./GRAL., sin espacios, nombre oficial distinto). IMPRESCINDIBLE.
+6. (Geografía) `scripts/import/populate_cve_inegi.sql` para llenar `cve_inegi`.
+
+Verificar con `scripts/checks.sql`.
+
 ## Notas / casos especiales
 - **09 CDMX**: no hay presidentes municipales sino 16 alcaldías (jefes/as de alcaldía). El INE BGD las trae como "municipio". Se cargan como `municipal_president`.
 - **20 Oaxaca**: 570 municipios, ~417 por usos y costumbres (sin partido → `party = null`). Dejar al final.

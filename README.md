@@ -25,6 +25,21 @@ por eso no hay capas de distrito separadas.
 - Proyección: cada estado viene en **su propia zona UTM** (Sonora = UTM 12N /
   EPSG:32612). `ogr2ogr -t_srs EPSG:4326` reproyecta solo leyendo el `.prj`.
 
+### ⚠️ Clave de municipio: INE ≠ INEGI
+
+El INE BGD **numera los municipios distinto a INEGI.** Ejemplo: Hermosillo es
+`26049` en INE BGD pero `26030` en INEGI. Aplica a **todos** los municipios del país.
+
+- El campo `municipalities.cvegeo` es la **clave del INE BGD** — es la clave canónica
+  interna del servicio. Todo (secciones, presidentes municipales) usa esta clave, así
+  que `resolve_coordinate` es 100% consistente.
+- Por eso los presidentes municipales se cargan por **JOIN de nombre** (no por clave
+  hardcodeada): si se hubieran fijado claves INEGI, nada habría macheado.
+- Para cruzar con datos de **INEGI** (censo, INPC, etc.) está la columna
+  `municipalities.cve_inegi` (migración `0007`), que se llena por match espacial con
+  `scripts/import/populate_cve_inegi.sql`. `resolve_coordinate` la expone en
+  `municipio.cve_inegi`.
+
 ### Nombres de campo reales (verificados con `ogrinfo`)
 
 | Shapefile | Campos que usamos |
