@@ -5,67 +5,26 @@ páginas de Wikipedia muy grandes (tablas de 200+ municipios), así que en los e
 grandes los presidentes municipales quedan parciales. Los diputados locales NO se ven
 afectados (caben en un fetch).
 
-## 20 — Oaxaca: presidentes municipales (PENDIENTE COMPLETO)
-- 570 municipios, ~417 por usos y costumbres (sin partido).
-- Diputados locales (25): ✅ cargados.
-- Presidentes municipales: ❌ no cargados. Decisión: dejarlos null por ahora (long tail).
-- Para resolver: requiere fuente CSV/PDF del IEEPCO con los 570, o varios fetches dedicados.
+## 20 — Oaxaca: 152 de partido cargados; ~418 usos y costumbres PENDIENTES
+- 570 municipios = 152 por partidos políticos + ~418 por usos y costumbres (Sistema
+  Normativo Indígena).
+- Diputados locales (25): ✅
+- Presidentes de partido (152): ✅ ver 20_oaxaca_presidentes.sql.
+- Presidentes usos y costumbres (~418): ❌ pendientes. `party = null`. No hay padrón
+  nacional consolidado de autoridades indígenas; se eligen por asamblea y cambian seguido.
+  Es el único hueco estructural del país. Fuente posible: IEEPCO (acuerdos por municipio).
 
-## 21 — Puebla: 19 presidentes municipales faltantes (cola X-Z)
-Cargados ~192/217. Faltan estos (correr verificación para confirmar):
+## 21 — Puebla: ✅ COMPLETO (217/217)
+Cerrado con la tabla oficial pegada (cola X-Z + Huehuetlán el Grande). Ver el segundo
+INSERT en 21_puebla_presidentes.sql.
 
-| cvegeo | municipio |
-|--------|-----------|
-| 21075 | Huehuetlán el Grande |
-| 21200 | Xochiapulco |
-| 21201 | Xochiltepec |
-| 21202 | Xochitlán de Vicente Suárez |
-| 21203 | Xochitlán Todos Santos |
-| 21204 | Yaonáhuac |
-| 21205 | Yehualtepec |
-| 21206 | Zacapala |
-| 21207 | Zacapoaxtla |
-| 21208 | Zacatlán |
-| 21209 | Zapotitlán |
-| 21210 | Zapotitlán de Méndez |
-| 21211 | Zaragoza |
-| 21212 | Zautla |
-| 21213 | Zihuateutla |
-| 21214 | Zinacatepec |
-| 21215 | Zongozotla |
-| 21216 | Zoquiapan |
-| 21217 | Zoquitlán |
+## 30 — Veracruz: ✅ COMPLETO (212/212)
+Cerrado con la tabla oficial pegada (la cola Y-Z + serie 200). Ver el segundo INSERT
+en 30_veracruz_presidentes.sql.
 
-## 30 — Veracruz: 21 presidentes faltantes (191/212 cargados)
-WebFetch no alcanza el final de la página (212 filas). Faltan exactamente estos 21,
-fuente sugerida: IEE Veracruz / PREP 2025:
-
-| cvegeo | municipio |
-|--------|-----------|
-| 30137 | Las Vigas de Ramírez |
-| 30147 | Sochiapa |
-| 30193 | Villa Aldama |
-| 30195 | Xoxocotla |
-| 30196 | Yanga |
-| 30197 | Yecuatla |
-| 30198 | Zacualpan |
-| 30199 | Zaragoza |
-| 30200 | Zentla |
-| 30201 | Zongolica |
-| 30202 | Zontecomatlán |
-| 30203 | Zozocolco de Hidalgo |
-| 30204 | Tres Valles |
-| 30205 | Nanchital de Lázaro Cárdenas del Río |
-| 30206 | Agua Dulce |
-| 30207 | El Higo |
-| 30208 | Carlos A. Carrillo |
-| 30209 | Uxpanapa |
-| 30210 | Tatahuicapan de Juárez |
-| 30211 | San Rafael |
-| 30212 | Santiago Sochiapan |
-
-## 12 — Guerrero: ~2 presidentes faltantes
-- La fuente dio 83/85; faltan municipios nuevos (p.ej. Ñuu Savi). Confirmar con verificación.
+## 12 — Guerrero: ✅ COMPLETO (85/85)
+Cerrado: Ayutla de los Libres (12012) y Ñuu Savi (12082), ambos por usos y costumbres
+(party null). Ver `_fixes_cvegeo.sql`.
 
 ## Patrón de mismatch del INE BGD (para cerrar verificaciones)
 El INE escribe nombres distinto a Wikipedia. Al cerrar huecos por `cvegeo`, ojo con:

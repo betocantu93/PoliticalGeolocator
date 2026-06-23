@@ -21,7 +21,7 @@ Leyenda: ✅ hecho · 🔄 en proceso · ⬜ pendiente
 | 09 | Ciudad de México | 🔄 generado | 🔄 generado (16 alcaldías) |
 | 10 | Durango | 🔄 generado | 🔄 generado |
 | 11 | Guanajuato | 🔄 generado | 🔄 generado (rev. Dolores Hidalgo) |
-| 12 | Guerrero | 🔄 generado | 🔄 generado (faltan ~2: Ñuu Savi; rev. verificación) |
+| 12 | Guerrero | 🔄 generado | ✅ completo 85/85 |
 | 13 | Hidalgo | 🔄 generado | 🔄 generado |
 | 14 | Jalisco | 🔄 generado | 🔄 generado (125) |
 | 15 | Estado de México | 🔄 generado | 🔄 generado (125) |
@@ -29,8 +29,8 @@ Leyenda: ✅ hecho · 🔄 en proceso · ⬜ pendiente
 | 17 | Morelos | 🔄 generado | 🔄 generado (3 usos y costumbres) |
 | 18 | Nayarit | 🔄 generado | 🔄 generado |
 | 19 | Nuevo León | 🔄 generado | 🔄 generado |
-| 20 | Oaxaca | 🔄 generado | ⬜ PENDIENTE (570 mpios; ~417 usos y costumbres) |
-| 21 | Puebla | 🔄 generado | 🔄 parcial ~191/217 (falta cola Y-Z) |
+| 20 | Oaxaca | 🔄 generado | ✅ 152/152 de partido · ~418 usos y costumbres = pendiente estructural |
+| 21 | Puebla | 🔄 generado | ✅ completo 217/217 |
 | 22 | Querétaro | 🔄 generado | 🔄 generado |
 | 23 | Quintana Roo | 🔄 generado | 🔄 generado |
 | 24 | San Luis Potosí | 🔄 generado | 🔄 generado |
@@ -39,7 +39,7 @@ Leyenda: ✅ hecho · 🔄 en proceso · ⬜ pendiente
 | 27 | Tabasco | 🔄 generado | 🔄 generado |
 | 28 | Tamaulipas | 🔄 generado | 🔄 generado |
 | 29 | Tlaxcala | 🔄 generado | 🔄 generado |
-| 30 | Veracruz | 🔄 generado | 🔄 parcial 191/212 (21 en PENDIENTES) |
+| 30 | Veracruz | 🔄 generado | ✅ completo 212/212 |
 | 31 | Yucatán | 🔄 generado (21 distritos) | 🔄 generado (106) |
 | 32 | Zacatecas | 🔄 generado | 🔄 generado |
 

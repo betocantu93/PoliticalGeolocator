@@ -41,6 +41,10 @@ insert into public.representatives (role, cve_ent, cvegeo_mun, name, party) valu
   ('municipal_president','08','08063','Omar Caleb Lazo Herrera','MORENA'),         -- Temósachi (INE: "Temosachic")
   ('municipal_president','10','10006','Silvia Rangel Orona','PRI'),                -- Villa: INE "Simón Bolívar" (yo tenía "General Simón Bolívar")
   ('municipal_president','23','23008','Angy Estefanía Mercado Asencio','MORENA'),  -- Solidaridad (INE usa la cabecera "Playa del Carmen")
-  ('municipal_president','24','24056','Amada Zavala','PT')                         -- Villa de Zaragoza (INE: "Zaragoza")
+  ('municipal_president','24','24056','Amada Zavala','PT'),                        -- Villa de Zaragoza (INE: "Zaragoza")
+
+  -- Guerrero: los 2 que la fuente no traía, ambos por usos y costumbres (party null):
+  ('municipal_president','12','12012','Elizabeth Calixto Leyva', null),           -- Ayutla de los Libres (Concejo Municipal Comunitario)
+  ('municipal_president','12','12082','Donaciano Morales Porfirio', null)         -- Ñuu Savi (cabildo por usos y costumbres)
 on conflict (role, cve_ent, coalesce(cvegeo_mun,''), coalesce(distrito,-1))
 do update set name = excluded.name, party = excluded.party;

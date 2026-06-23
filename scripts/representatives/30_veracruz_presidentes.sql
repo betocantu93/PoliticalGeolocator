@@ -209,8 +209,33 @@ do update set name = excluded.name, party = excluded.party;
 
 commit;
 
--- Verificación: municipios de Veracruz sin presidente (la cola Villa Aldama->Zozocolco
--- y posibles nombres INEGI largos). Pásamelos para cerrarlos.
+-- Cola completada con la tabla oficial (212/212). Por cvegeo INE directo. Partido vigente.
+insert into public.representatives (role, cve_ent, cvegeo_mun, name, party) values
+  ('municipal_president','30','30137','Rafael Marín de la Luz','MORENA'),
+  ('municipal_president','30','30147','Crispina Zuccolotto González','PVEM'),
+  ('municipal_president','30','30193','Dulce María Flores Rosas','MORENA'),
+  ('municipal_president','30','30195','José Castillo Romero','PT'),
+  ('municipal_president','30','30196','Rafael Aguilar Martínez','PRI'),
+  ('municipal_president','30','30197','Rolando Jiménez Pérez','PT'),
+  ('municipal_president','30','30198','Andrés Maldonado Yáñez','PRI'),
+  ('municipal_president','30','30199','Miguel Ángel Grajales Mateo','MORENA'),
+  ('municipal_president','30','30200','Miriam Guadalupe López Cid','MORENA'),
+  ('municipal_president','30','30201','Ignacio Ramírez Flores','MC'),
+  ('municipal_president','30','30202','Josué Gonzalo Susano Hernández','PAN'),
+  ('municipal_president','30','30203','Taggassy García Lobato','MORENA'),
+  ('municipal_president','30','30204','José Juan Gallegos Cárcamo','MORENA'),
+  ('municipal_president','30','30205','José Luis Pérez Salinas','MC'),
+  ('municipal_president','30','30206','Ángel de Jesús Delgado Ramírez','MORENA'),
+  ('municipal_president','30','30207','Juana María Martínez Guerrero','PT'),
+  ('municipal_president','30','30208','Francisco Javier Molina Arrioja','MORENA'),
+  ('municipal_president','30','30209','Martín Alberto Aguilar Cuéllar','MC'),
+  ('municipal_president','30','30210','Vladimir González Martínez','PT'),
+  ('municipal_president','30','30211','Gil Armando Méndez Grappin','MORENA'),
+  ('municipal_president','30','30212','Reyna Lorenzo Cruz','PVEM')
+on conflict (role, cve_ent, coalesce(cvegeo_mun,''), coalesce(distrito,-1))
+do update set name = excluded.name, party = excluded.party;
+
+-- Verificación: municipios de Veracruz sin presidente (debe quedar 0).
 select m.cvegeo, m.nom_mun
 from public.municipalities m
 where m.cve_ent = '30'

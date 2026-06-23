@@ -220,7 +220,31 @@ do update set name = excluded.name, party = excluded.party;
 
 commit;
 
--- Verificación: municipios de Puebla sin presidente (incluye la cola Y-Z faltante).
+-- Cola completada con la tabla oficial (217/217). Por cvegeo INE directo.
+insert into public.representatives (role, cve_ent, cvegeo_mun, name, party) values
+  ('municipal_president','21','21075','Aarón Alva Sánchez','PAN'),
+  ('municipal_president','21','21200','Mariano Ortuño Aguilar','MC'),
+  ('municipal_president','21','21201','Alex Omar Rodríguez Carbente','Fuerza por México'),
+  ('municipal_president','21','21202','José Luis Tirado Cabañez','PRD'),
+  ('municipal_president','21','21203','Juan Francisco Alcalá Rosas','PT'),
+  ('municipal_president','21','21204','Jesús Salazar Morelos','PRD'),
+  ('municipal_president','21','21205','Carlos Pérez Pérez','MORENA'),
+  ('municipal_president','21','21206','Gustavo López Cabrera','PRD'),
+  ('municipal_president','21','21207','Margarito Rojas Parra','Nueva Alianza'),
+  ('municipal_president','21','21208','Beatriz Sánchez Galindo','MORENA'),
+  ('municipal_president','21','21209','Leonardo Noél Arizmendi Martínez','PVEM'),
+  ('municipal_president','21','21210','Salvador Tino Martínez','PT'),
+  ('municipal_president','21','21211','José Luis Martínez Hernández','PSI'),
+  ('municipal_president','21','21212','Marco Antonio Alejo Calderón','MORENA'),
+  ('municipal_president','21','21213','Petra Morales Morales','PVEM'),
+  ('municipal_president','21','21214','Héctor Ernesto Montalvo de los Santos','PAN'),
+  ('municipal_president','21','21215','Joel Hernández Zaragoza','Fuerza por México'),
+  ('municipal_president','21','21216','Victoriano Santiago Bautista','MORENA'),
+  ('municipal_president','21','21217','Cristóbal Coello Maceda','PRD')
+on conflict (role, cve_ent, coalesce(cvegeo_mun,''), coalesce(distrito,-1))
+do update set name = excluded.name, party = excluded.party;
+
+-- Verificación: municipios de Puebla sin presidente (debe quedar 0).
 select m.cvegeo, m.nom_mun
 from public.municipalities m
 where m.cve_ent = '21'
