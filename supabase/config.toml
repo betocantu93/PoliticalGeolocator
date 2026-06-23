@@ -2,3 +2,7 @@ project_id = "geoelectoral"
 
 [db]
 major_version = 15
+
+# Public (no Authorization header required)
+[functions.resolve-coordinates]
+verify_jwt = false
