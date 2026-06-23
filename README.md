@@ -111,6 +111,14 @@ No hay fuente nacional limpia; se captura. La tabla `representatives` distingue 
 **Solo cargos por distrito/territorio** (los plurinominales/RP se omiten: no resuelven
 por coordenada).
 
+> 🔁 **Para actualizar tras una elección** (2027+), o para cargar un estado nuevo sin
+> teclear a mano, usa el generador y el manual:
+> - `scripts/representatives/build_state_reps.py` — pega la tabla (Wikipedia/IEE) → SQL.
+> - [UPDATE_GUIDE.md](UPDATE_GUIDE.md) — procedimiento por capa + catálogo de gotchas.
+> - `scripts/representatives/apply_all.sh` — aplica toda la capa de representantes de un jalón.
+>
+> Lo de abajo es la referencia conceptual; el flujo operativo real está en UPDATE_GUIDE.
+
 ### 2a. Gobernador (1)
 ```sql
 insert into public.representatives (role, cve_ent, name, party)
